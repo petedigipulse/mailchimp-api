@@ -9,4 +9,6 @@ class ApplicationController < ActionController::Base
 
   mailchimp = Mailchimp::API.new(MAILCHIMP-API-KEY)
 
+  mailchimp.lists.members(MAILCHIMP-LIST-ID)['data']
+
 end

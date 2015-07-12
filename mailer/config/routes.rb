@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
   resources :users
+
+  get "lists" => 'lists#index'
+  get "lists/index"
+  get "lists/:id" => 'lists#view'
+  post "lists/:id/subscribe" => 'lists#subscribe'
+
+  get "reports" => 'reports#index'
+  get "reports/index"
+  get "reports/:id" => 'reports#view'
+
+  root "pages#home"
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -3,13 +3,24 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  @mc = Mailchimp::API.new('e66a49d3c53f53ea3e172c278af314ae-us10')
+  # @mc = Mailchimp::API.new('e66a49d3c53f53ea3e172c278af314ae-us10')
  
-  MAILCHIMP-LIST-ID = "e66a49d3c53f53ea3e172c278af314ae-us10"
-  MAILCHIMP-LIST-ID = "0322578d69"
+  # MAILCHIMP-LIST-ID = "e66a49d3c53f53ea3e172c278af314ae-us10"
+  # MAILCHIMP-LIST-ID = "0322578d69"
 
-  mailchimp = Mailchimp::API.new(MAILCHIMP-API-KEY)
+  # mailchimp = Mailchimp::API.new(MAILCHIMP-API-KEY)
 
-  mailchimp.lists.members(MAILCHIMP-LIST-ID)['data']
+  # mailchimp.lists.members(MAILCHIMP-LIST-ID)['data']
+
+
+  require 'mailchimp'
+
+class ApplicationController < ActionController::Base
+  before_action :setup_mcapi
+
+  def setup_mcapi
+    @mc = Mailchimp::API.new('e66a49d3c53f53ea3e172c278af314ae-us10')
+  end
+end
 
 end

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   require 'mailchimp'
 
-class ApplicationController < ActionController::Base
+
   before_action :setup_mcapi
 
   def setup_mcapi
@@ -23,4 +23,4 @@ class ApplicationController < ActionController::Base
   end
 end
 
-end
+
